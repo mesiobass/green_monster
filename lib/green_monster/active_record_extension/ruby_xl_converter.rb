@@ -34,7 +34,7 @@ module GreenMonster
               decoder.convert(row)
             end
 
-            obj = self.find_by("#{self.schema.index_key}": attrs[self.schema.index_key]) || self.new
+            obj = self.find_by("#{self.schema.index_key}" => attrs[self.schema.index_key]) || self.new
             obj.assign_attributes(attrs)
 
             obj
