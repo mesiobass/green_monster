@@ -1,7 +1,7 @@
 module GreenMonster
   module Attribute
     class Abstract
-      attr_reader :name
+      attr_reader :name, :options
       
       # 初期化
       def initialize(name, options = {})
