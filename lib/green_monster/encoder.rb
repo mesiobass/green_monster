@@ -7,7 +7,7 @@ module GreenMonster
 
     # 変換
     def convert(model)
-      @schema.map do |attr|
+      @schema.attributes.map do |attr|
         [attr.name, attr.encode(model.send(attr.name)), attr.options[:col_num]]
       end
     end

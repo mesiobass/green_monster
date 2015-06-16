@@ -6,13 +6,15 @@ module GreenMonster
     end
 
     # 変換
-    def convert(row)
+    def convert(row, &block)
       attrs = {}
       @schema.attributes.each do |attribute|
         attrs.update(
           attribute.name => attribute.decode(fetch_value(row[attribute.options[:col_num]]))
         )
       end
+
+      block.call(attrs) if block_given?
 
       attrs
     end
