@@ -1,7 +1,7 @@
 module GreenMonster
   module ValueRubyXL
     def fetch_value(data)
-      data.value
+      data.try(:value)
     end
   end
 end
